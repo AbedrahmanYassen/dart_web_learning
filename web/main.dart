@@ -19,13 +19,16 @@ void main(List<String> args) {
   todosContainer.id = 'todosContainer';
   //adding element on the todo list after clicking on the button which is the text on the input
   buttonElement.onClick.listen((event) {
-    var todoItem = new Element.html("<div>${inputElement.value}</div>");
-    todosContainer.children.add(todoItem);
-    inputElement.value = '';
-    //you can delete a to-do by clicking on it as :
-    todoItem.onClick.listen((event) {
-      todosContainer.children.remove(todoItem);
-    });
+    if (inputElement.value != '') {
+      var todoItem = new Element.html("<div>${inputElement.value}</div>");
+      todoItem.className = 'item';
+      todosContainer.children.add(todoItem);
+      inputElement.value = '';
+      //you can delete a to-do by clicking on it as :
+      todoItem.onClick.listen((event) {
+        todosContainer.children.remove(todoItem);
+      });
+    }
   });
 
   divElement.children.add(header);
