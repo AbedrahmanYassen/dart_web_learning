@@ -19,6 +19,10 @@ html, body {
   background-color: brown;
   right: 300px;
 }
+.item{
+  width: 100px;
+  height: 30px;
+}
 
 #output {
   padding: 20px;
